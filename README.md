@@ -24,6 +24,7 @@ HOW TO RUN
 2. Run using: python task_manager.py
    
 FUTURE ENHANCEMENTS
+
 • GUI with Tkinter
 • Database Integration
 • Reminders / Notifications
