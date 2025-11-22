@@ -1,44 +1,32 @@
-# Personalized-Task-Manager
-A simple and personaliszed task manager that helps you create, organize and track daily tasks with a clean interface and customizable features
+# Personal Task Manager (Console-Based)
 
-README - Personalised Task Manager
-This project is a simple command-line based Personalised Task Manager that allows users to create an
-account, log in, add tasks,
-and update their task status. The program stores user information and tasks in text files and provides a
-lightweight way to track daily activities.
+A simple, lightweight **command-line task management system** written in Python. This program allows users to create an account, store personal information, add tasks with targets, and track task progress — all saved locally in plain text files.
 
-FEATURES
+Perfect for learning file handling in Python or for anyone who wants a minimal, no-dependency personal task tracker.
 
-• User Signup and Login
+## Features
 
-• Stores Name, Address, and Age
+- User registration and login (with plain text password storage)
+- Secure per-user data storage (`username_data.txt`)
+- Add multiple tasks with descriptions and targets
+- Update and view task progress (Completed / Ongoing / Not Started)
+- Separate task status log with timestamps
+- Simple text-based menu interface
 
-• Add Tasks with Targets
+## Warning: Security Note
 
-• Update Task Progress
+> **This project stores passwords in plain text** and is intended **for educational purposes only**.  
+> Do **not** use this in production or with sensitive information.
 
-• View Profile Data
+## Requirements
 
-• View Task Status Logs
+- Python 3.x (No external libraries required)
 
+## How to Run
 
-FILE STORAGE STRUCTURE
+1. Save the script as `task_manager.py`
+2. Open terminal/command prompt
+3. Run the program:
 
-1. username_data.txt – Stores password, user info, and tasks.
-2. username_status.txt – Stores task progress updates with timestamps.
-
-HOW TO RUN
-1. Save the script as task_manager.py
-2. Run using: python task_manager.py
-   
-FUTURE ENHANCEMENTS
-
-• GUI with Tkinter
-
-• Database Integration
-
-• Reminders / Notifications
-
-• Task Categories & Priority Levels
-
-
+```bash
+python task_manager.py
