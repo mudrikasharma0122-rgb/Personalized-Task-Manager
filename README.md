@@ -1,5 +1,6 @@
 # Personalized-Task-Manager
 A simple and personaliszed task manager that helps you create, organize and track daily tasks with a clean interface and customizable features
+
 README - Personalised Task Manager
 This project is a simple command-line based Personalised Task Manager that allows users to create an
 account, log in, add tasks,
