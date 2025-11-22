@@ -8,11 +8,17 @@ lightweight way to track daily activities.
 
 FEATURES
 • User Signup and Login
+
 • Stores Name, Address, and Age
+
 • Add Tasks with Targets
+
 • Update Task Progress
+
 • View Profile Data
+
 • View Task Status Logs
+
 
 FILE STORAGE STRUCTURE
 
@@ -26,8 +32,11 @@ HOW TO RUN
 FUTURE ENHANCEMENTS
 
 • GUI with Tkinter
+
 • Database Integration
+
 • Reminders / Notifications
+
 • Task Categories & Priority Levels
 
 
