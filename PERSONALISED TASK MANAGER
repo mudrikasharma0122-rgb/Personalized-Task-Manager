@@ -1,6 +1,6 @@
 import datetime
 
-# Function to store user information
+# This function saves user info in a text file
 def user_information(username, password):
     name = input("Enter your name: ")
     address = input("Enter your address: ")
@@ -8,17 +8,18 @@ def user_information(username, password):
 
     filename = username + "_data.txt"
 
-    with open(filename, 'w') as f:
-        f.write(password + "\n")
-        f.write("Name: " + name + "\n")
-        f.write("Address: " + address + "\n")
-        f.write("Age: " + age + "\n")
-        f.write("\n---- TASKS ----\n")
+    f = open(filename, "w")
+    f.write(password + "\n")
+    f.write("Name: " + name + "\n")
+    f.write("Address: " + address + "\n")
+    f.write("Age: " + age + "\n")
+    f.write("\n---- TASKS ----\n")
+    f.close()
 
     print("Account created successfully!\n")
 
 
-# SIGNUP FUNCTION
+# Signup function for new users
 def signup():
     print("Create your account")
     username = input("Enter a username: ")
@@ -30,7 +31,7 @@ def signup():
     login()
 
 
-# LOGIN FUNCTION
+# Login function
 def login():
     username = input("Enter username: ")
     entered_password = input("Enter password: ")
@@ -38,8 +39,9 @@ def login():
     filename = username + "_data.txt"
 
     try:
-        with open(filename, 'r') as f:
-            saved_password = f.readline().strip()
+        f = open(filename, "r")
+        saved_password = f.readline().strip()
+        f.close()
 
         if entered_password == saved_password:
             print("\nLogin successful!")
@@ -50,13 +52,13 @@ def login():
 
             choice = input("Choose an option: ")
 
-            if choice == '1':
+            if choice == "1":
                 view_data(filename)
-            elif choice == '2':
+            elif choice == "2":
                 add_tasks(filename)
-            elif choice == '3':
+            elif choice == "3":
                 update_task_status(username)
-            elif choice == '4':
+            elif choice == "4":
                 view_task_status(username)
             else:
                 print("Invalid choice")
@@ -65,38 +67,41 @@ def login():
             print("Wrong username or password! Try again.")
             login()
 
-    except FileNotFoundError:
+    except:
         print("User not found! Please signup first.")
         signup()
 
 
-# VIEW USER DATA
+# View data from user file
 def view_data(filename):
-    with open(filename, 'r') as f:
-        print("\n--- USER DATA ---")
-        print(f.read())
+    f = open(filename, "r")
+    print("\n--- USER DATA ---")
+    print(f.read())
+    f.close()
 
 
-# ADD TASKS
+# Function to add tasks
 def add_tasks(filename):
     n = int(input("How many tasks do you want to add? "))
 
-    with open(filename, 'a') as f:
-        for i in range(1, n + 1):
-            task = input(f"Enter Task {i}: ")
-            target = input(f"Enter Target {i}: ")
+    f = open(filename, "a")
 
-            f.write(f"Task {i}: {task}\n")
-            f.write(f"Target {i}: {target}\n")
+    for i in range(1, n + 1):
+        task = input("Enter Task " + str(i) + ": ")
+        target = input("Enter Target " + str(i) + ": ")
 
-            stop = input("Press space to stop adding tasks or Enter to continue: ")
-            if stop == ' ':
-                break
+        f.write("Task " + str(i) + ": " + task + "\n")
+        f.write("Target " + str(i) + ": " + target + "\n")
 
+        stop = input("Press space to stop, or Enter to continue: ")
+        if stop == " ":
+            break
+
+    f.close()
     print("Tasks added successfully!\n")
 
 
-# UPDATE TASK STATUS
+# Function to update task status
 def update_task_status(username):
     filename = username + "_status.txt"
 
@@ -104,29 +109,31 @@ def update_task_status(username):
     not_started = input("Enter tasks not started: ")
     ongoing = input("Enter tasks in progress: ")
 
-    with open(filename, 'a') as f:
-        f.write("\n" + str(datetime.datetime.now()) + "\n")
-        f.write("Completed: " + completed + "\n")
-        f.write("Ongoing: " + ongoing + "\n")
-        f.write("Not Started: " + not_started + "\n")
+    f = open(filename, "a")
+    f.write("\n" + str(datetime.datetime.now()) + "\n")
+    f.write("Completed: " + completed + "\n")
+    f.write("Ongoing: " + ongoing + "\n")
+    f.write("Not Started: " + not_started + "\n")
+    f.close()
 
     print("Task status updated!\n")
 
 
-# VIEW TASK STATUS
+# View task status
 def view_task_status(username):
     filename = username + "_status.txt"
 
     try:
-        with open(filename, 'r') as f:
-            print("\n--- TASK STATUS ---")
-            print(f.read())
-    except FileNotFoundError:
+        f = open(filename, "r")
+        print("\n--- TASK STATUS ---")
+        print(f.read())
+        f.close()
+    except:
         print("No task status found. Please update status first.")
 
 
-# MAIN PROGRAM
-if __name__ == '__main__':
+# Main program starts here
+if __name__ == "__main__":
     print("WELCOME TO PERSONAL TASK MANAGER")
     new_user = int(input("Are you new here? Press 1 for Yes, 0 for No: "))
 
@@ -137,3 +144,7 @@ if __name__ == '__main__':
     else:
         print("Invalid input!")
 
+
+
+   
+   
