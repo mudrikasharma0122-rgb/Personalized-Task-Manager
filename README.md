@@ -24,3 +24,4 @@ FUTURE ENHANCEMENTS
 • Reminders / Notifications
 • Task Categories & Priority Levels
 
+
