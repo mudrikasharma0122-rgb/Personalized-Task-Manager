@@ -5,6 +5,7 @@ This project is a simple command-line based Personalised Task Manager that allow
 account, log in, add tasks,
 and update their task status. The program stores user information and tasks in text files and provides a
 lightweight way to track daily activities.
+
 FEATURES
 • User Signup and Login
 • Stores Name, Address, and Age
@@ -12,12 +13,16 @@ FEATURES
 • Update Task Progress
 • View Profile Data
 • View Task Status Logs
+
 FILE STORAGE STRUCTURE
+
 1. username_data.txt – Stores password, user info, and tasks.
 2. username_status.txt – Stores task progress updates with timestamps.
+
 HOW TO RUN
 1. Save the script as task_manager.py
 2. Run using: python task_manager.py
+   
 FUTURE ENHANCEMENTS
 • GUI with Tkinter
 • Database Integration
