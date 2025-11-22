@@ -1,0 +1,26 @@
+PROJECT DESCRIPTION – Personalised Task Manager
+
+Objective:
+To provide a simple tool that helps users record tasks, update progress, and organise daily work in an
+efficient way.
+
+Problem Statement:
+Users often forget tasks or lose track of progress. A simple personal task manager helps store tasks
+and monitor progress easily.
+
+Scope:
+• User profile creation
+• Password-based login
+• Adding and storing tasks
+• Updating task status
+• Viewing data and status history
+
+Target Users:
+Students, professionals, and anyone needing a basic task tracker.
+
+High-Level Features:
+• Signup & Login
+• Add Tasks
+• Update Task Status
+• Time-stamped status logs
+• Data stored using text files
