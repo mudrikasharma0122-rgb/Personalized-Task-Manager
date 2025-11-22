@@ -7,6 +7,7 @@ and update their task status. The program stores user information and tasks in t
 lightweight way to track daily activities.
 
 FEATURES
+
 • User Signup and Login
 
 • Stores Name, Address, and Age
