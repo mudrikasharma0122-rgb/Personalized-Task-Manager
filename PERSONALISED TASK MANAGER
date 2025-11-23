@@ -5,9 +5,7 @@ def user_information(username, password):
     name = input("Enter your name: ")
     address = input("Enter your address: ")
     age = input("Enter your age: ")
-
     filename = username + "_data.txt"
-
     f = open(filename, "w")
     f.write(password + "\n")
     f.write("Name: " + name + "\n")
@@ -18,7 +16,6 @@ def user_information(username, password):
 
     print("Account created successfully!\n")
 
-
 # Signup function for new users
 def signup():
     print("Create your account")
@@ -26,10 +23,8 @@ def signup():
     password = input("Enter a password: ")
 
     user_information(username, password)
-
     print("Please login to continue")
     login()
-
 
 # Login function
 def login():
@@ -37,7 +32,6 @@ def login():
     entered_password = input("Enter password: ")
 
     filename = username + "_data.txt"
-
     try:
         f = open(filename, "r")
         saved_password = f.readline().strip()
@@ -66,11 +60,9 @@ def login():
         else:
             print("Wrong username or password! Try again.")
             login()
-
     except:
         print("User not found! Please signup first.")
         signup()
-
 
 # View data from user file
 def view_data(filename):
@@ -78,7 +70,6 @@ def view_data(filename):
     print("\n--- USER DATA ---")
     print(f.read())
     f.close()
-
 
 # Function to add tasks
 def add_tasks(filename):
@@ -100,7 +91,6 @@ def add_tasks(filename):
     f.close()
     print("Tasks added successfully!\n")
 
-
 # Function to update task status
 def update_task_status(username):
     filename = username + "_status.txt"
@@ -118,7 +108,6 @@ def update_task_status(username):
 
     print("Task status updated!\n")
 
-
 # View task status
 def view_task_status(username):
     filename = username + "_status.txt"
@@ -131,12 +120,10 @@ def view_task_status(username):
     except:
         print("No task status found. Please update status first.")
 
-
 # Main program starts here
 if __name__ == "__main__":
     print("WELCOME TO PERSONAL TASK MANAGER")
     new_user = int(input("Are you new here? Press 1 for Yes, 0 for No: "))
-
     if new_user == 1:
         signup()
     elif new_user == 0:
